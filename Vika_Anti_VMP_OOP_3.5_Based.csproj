@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{45260045-AD00-47E7-92A4-EBD491498E9E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Vika_Anti_VMP_OOP_3._5_Based</RootNamespace>
+    <AssemblyName>Vika_Anti_VMP_OOP_3.5_Based</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Colorful.Console, Version=1.2.15.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Colorful.Console.1.2.15\lib\net461\Colorful.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="de4dot.blocks, Version=3.1.41592.3405, Culture=neutral, PublicKeyToken=d3f3ed1e47f67fc6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\de4dot Latest\de4dot.blocks.dll</HintPath>
+    </Reference>
+    <Reference Include="dnlib, Version=3.3.2.0, Culture=neutral, PublicKeyToken=50e96378b6e77999, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\de4dot Latest\dnlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\ControlFlowDeobfuscator.cs" />
+    <Compile Include="Helpers\Logicals_Patterns.cs" />
+    <Compile Include="Helpers\Mutation_Cleaner.cs" />
+    <Compile Include="Helpers\VikaReader.cs" />
+    <Compile Include="Interfaces\ICleaner.cs" />
+    <Compile Include="Interfaces\ILogger.cs" />
+    <Compile Include="Interfaces\IDevirtStage.cs" />
+    <Compile Include="OpCodes\Ariphmetics\Add.cs" />
+    <Compile Include="OpCodes\Ariphmetics\Add_Ovf.cs" />
+    <Compile Include="OpCodes\Ariphmetics\Add_Ovf_Un.cs" />
+    <Compile Include="OpCodes\Ariphmetics\And.cs" />
+    <Compile Include="OpCodes\Ariphmetics\convi4.cs" />
+    <Compile Include="OpCodes\Ariphmetics\Div.cs" />
+    <Compile Include="OpCodes\Ariphmetics\Div_Un.cs" />
+    <Compile Include="OpCodes\Ariphmetics\Mul _Ovf_Un.cs" />
+    <Compile Include="OpCodes\Ariphmetics\Mul.cs" />
+    <Compile Include="OpCodes\Ariphmetics\Mul_Ovf.cs" />
+    <Compile Include="OpCodes\Ariphmetics\Neg.cs" />
+    <Compile Include="OpCodes\Ariphmetics\Not.cs" />
+    <Compile Include="OpCodes\Ariphmetics\Or.cs" />
+    <Compile Include="OpCodes\Ariphmetics\Rem.cs" />
+    <Compile Include="OpCodes\Ariphmetics\Rem_Un.cs" />
+    <Compile Include="OpCodes\Ariphmetics\Shl.cs" />
+    <Compile Include="OpCodes\Ariphmetics\Shr.cs" />
+    <Compile Include="OpCodes\Ariphmetics\Shr_Un.cs" />
+    <Compile Include="OpCodes\Ariphmetics\Sub.cs" />
+    <Compile Include="OpCodes\Ariphmetics\Sub_Ovf.cs" />
+    <Compile Include="OpCodes\Ariphmetics\Sub_Ovf_Un.cs" />
+    <Compile Include="OpCodes\Ariphmetics\Xor.cs" />
+    <Compile Include="OpCodes\Arrays\Box.cs" />
+    <Compile Include="OpCodes\Arrays\Box_Two.cs" />
+    <Compile Include="OpCodes\Arrays\ldelema.cs" />
+    <Compile Include="OpCodes\Arrays\Ldelem_Ref.cs" />
+    <Compile Include="OpCodes\Arrays\Ldelem_Ref_Two.cs" />
+    <Compile Include="OpCodes\Arrays\LdLen.cs" />
+    <Compile Include="OpCodes\Arrays\newarr.cs" />
+    <Compile Include="OpCodes\Arrays\Stelem_Ref.cs" />
+    <Compile Include="OpCodes\Arrays\UnBox.cs" />
+    <Compile Include="OpCodes\Arrays\UnBox_Any.cs" />
+    <Compile Include="OpCodes\Handlers\EndFilter.cs" />
+    <Compile Include="OpCodes\Locals\LdLoc.cs" />
+    <Compile Include="OpCodes\Locals\ldloca.cs" />
+    <Compile Include="OpCodes\Locals\Stloc.cs" />
+    <Compile Include="OpCodes\Locals\Throw.cs" />
+    <Compile Include="OpCodes\Logicals\Dup.cs" />
+    <Compile Include="OpCodes\Logicals\IsInst.cs" />
+    <Compile Include="OpCodes\Logicals\RetThrow.cs" />
+    <Compile Include="OpCodes\Logicals\Pop.cs" />
+    <Compile Include="OpCodes\Handlers\EndFinally.cs" />
+    <Compile Include="OpCodes\Logicals\SizeOf.cs" />
+    <Compile Include="Interfaces\IOpCode.cs" />
+    <Compile Include="OpCodes\Native\ckfinite.cs" />
+    <Compile Include="OpCodes\Native\localloc.cs" />
+    <Compile Include="OpCodes\Reflecsions\Call.cs" />
+    <Compile Include="OpCodes\Reflecsions\Callvirt.cs" />
+    <Compile Include="OpCodes\Reflecsions\CastClass.cs" />
+    <Compile Include="OpCodes\Reflecsions\CastClass_Two.cs" />
+    <Compile Include="OpCodes\Reflecsions\Ldflda.cs" />
+    <Compile Include="OpCodes\Reflecsions\Ldfld.cs" />
+    <Compile Include="OpCodes\Reflecsions\Ldftn.cs" />
+    <Compile Include="OpCodes\Reflecsions\Ldtoken.cs" />
+    <Compile Include="OpCodes\Reflecsions\Ldtoken_Two.cs" />
+    <Compile Include="OpCodes\Reflecsions\ldvirtftn.cs" />
+    <Compile Include="OpCodes\Reflecsions\NewOBJ.cs" />
+    <Compile Include="OpCodes\Reflecsions\Stfld_Two.cs" />
+    <Compile Include="OpCodes\Reflecsions\Stfld.cs" />
+    <Compile Include="OpCodes\Reflecsions\Stsfld.cs" />
+    <Compile Include="OpCodes\Reflecsions\UnBoxAny.cs" />
+    <Compile Include="OpCodes\VMP\free.cs" />
+    <Compile Include="OpCodes\Values\InitObj.cs" />
+    <Compile Include="OpCodes\Values\ldcI4.cs" />
+    <Compile Include="OpCodes\Values\ldcI8.cs" />
+    <Compile Include="OpCodes\Values\LdcR4.cs" />
+    <Compile Include="OpCodes\Values\ldcR8.cs" />
+    <Compile Include="OpCodes\Values\Ldnull.cs" />
+    <Compile Include="OpCodes\Values\Ldstr.cs" />
+    <Compile Include="OpCodes\VMP\ConvOVFUn.cs" />
+    <Compile Include="OpCodes\VMP\ConvOVF.cs" />
+    <Compile Include="OpCodes\VMP\Conv.cs" />
+    <Compile Include="OpCodes\VMP\Cmp.cs" />
+    <Compile Include="OpCodes\VMP\Create_Local.cs" />
+    <Compile Include="OpCodes\VMP\JMP.cs" />
+    <Compile Include="OpCodes\VMP\Leave.cs" />
+    <Compile Include="OpCodes\VMP\ReadPointer.cs" />
+    <Compile Include="OpCodes\VMP\Setup_EH_Handlers.cs" />
+    <Compile Include="OpCodes\VMP\Try.cs" />
+    <Compile Include="OpCodes\VMP\VMP_Arr_Helper.cs" />
+    <Compile Include="OpCodes\VMP\VMP_excallvirt.cs" />
+    <Compile Include="OpCodes\VMP\VMP_excall.cs" />
+    <Compile Include="OpCodes\VMP\VMP_TYPE_INITER.cs" />
+    <Compile Include="OpCodes\Values\ldind.cs" />
+    <Compile Include="OpCodes\Values\Stind.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Interfaces\IPreDevirtStage.cs" />
+    <Compile Include="Stages\Before_Devirt\OpCodes_Sorter\Keys_Finder.cs" />
+    <Compile Include="Stages\Before_Devirt\OpCodes_Sorter\OpCodes_Sorter.cs" />
+    <Compile Include="Stages\Before_Devirt\Pre_Devirt.cs" />
+    <Compile Include="Stages\Code_Cleanup\Cleaner.cs" />
+    <Compile Include="Stages\Code_Cleanup\Fixers\ldarg_fixer.cs" />
+    <Compile Include="Stages\Code_Cleanup\Fixers\Post_Clean.cs" />
+    <Compile Include="Stages\Code_Cleanup\Fixers\Ret_Fixer.cs" />
+    <Compile Include="Stages\Code_Cleanup\Fixers\Pop_Fixer.cs" />
+    <Compile Include="Stages\Devirt\Blocks_Fixer\Targets_Fixer.cs" />
+    <Compile Include="Stages\Devirt\Blocks_Fixer\Branch_Fixer.cs" />
+    <Compile Include="Stages\Devirt\Blocks_Fixer\Set_Ehs_Blocks.cs" />
+    <Compile Include="Stages\Devirt\Blocks_Fixer\Remove_Dublicates.cs" />
+    <Compile Include="Stages\Devirt\Blocks_Fixer\Set_first_Block.cs" />
+    <Compile Include="Stages\Devirt\Devirt_Context.cs" />
+    <Compile Include="Stages\Before_Devirt\Pre_Devirt_Context.cs" />
+    <Compile Include="Interfaces\IStage.cs" />
+    <Compile Include="Stages\Before_Devirt\Virt_Methods_Finder\Find_Virt_Methods.cs" />
+    <Compile Include="Stages\Before_Devirt\VMP_Finder\Find_Opcodes_Methods.cs" />
+    <Compile Include="Stages\Before_Devirt\VMP_Finder\Find_Vmp_Type.cs" />
+    <Compile Include="Stages\Devirt\Devirt.cs" />
+    <Compile Include="Stages\Devirt\Disassembler\Branches\Branch_Disasm.cs" />
+    <Compile Include="Stages\Devirt\Disassembler\Disassembler.cs" />
+    <Compile Include="Stages\Devirt\Disassembler\Specials\Create_local_disasm.cs" />
+    <Compile Include="Stages\Devirt\Disassembler\Specials\Handlers_Disasm.cs" />
+    <Compile Include="Stages\Devirt\Recompiler\Logical_fixer.cs" />
+    <Compile Include="Stages\Devirt\Recompiler\Restore_Handlers.cs" />
+    <Compile Include="Stages\Devirt\Recompiler\Restore_Instructions.cs" />
+    <Compile Include="Vika Recompiler_Structures\Opcode_Context.cs" />
+    <Compile Include="Vika Recompiler_Structures\VikaStack.cs" />
+    <Compile Include="Vika Recompiler_Structures\Vika_Block.cs" />
+    <Compile Include="Vika Recompiler_Structures\Vika_BL_TYPE.cs" />
+    <Compile Include="Vika Recompiler_Structures\Vika_Handler.cs" />
+    <Compile Include="Vika Recompiler_Structures\Vika_Instruction.cs" />
+    <Compile Include="Vika Recompiler_Structures\Vika_Method.cs" />
+    <Compile Include="Vika Recompiler_Structures\Vika_Pattern.cs" />
+    <Compile Include="Vika_Context.cs" />
+    <Compile Include="Configs\Vika_Config.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Configs\App.config" />
+    <None Include="Configs\packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
